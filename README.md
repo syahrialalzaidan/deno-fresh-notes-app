@@ -24,8 +24,8 @@ This project is a full-stack notes application built using Deno Fresh, Supabase,
 4. Run the following command to start the server:
 ````shell
 deno task serve
-5. Access the application in your web browser at `http://localhost:8000`.
-
+````
+5. Access the application in your web browser at `http://localhost:8000`
 ## Author
 
 This project was created by Mochamad Syahrial Alzaidan.
