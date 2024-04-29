@@ -1,16 +1,35 @@
-# Fresh project
+# Full Stack Notes App
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+This project is a full-stack notes application built using Deno Fresh, Supabase, and Tailwind CSS. It provides a fast and efficient way to manage your notes with a modern and responsive user interface.
 
-### Usage
+## Technologies Used
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
+- **Deno Fresh**: A lightweight web framework for Deno, providing routing, middleware, and other essential features for building web applications in Deno.
+- **Supabase**: A powerful open-source platform that provides a PostgreSQL database with GraphQL capabilities, making it easy to build scalable and secure applications.
+- **Tailwind CSS**: A utility-first CSS framework for creating responsive and customizable web interfaces with minimal CSS code.
+- **React**: Utilized React component for better readability and performance.
+- **Typescript**: Used for more type-safety code and more consistent code overall.
 
-Then start the project:
+## Features
 
-```
-deno task start
-```
+- Create, read, update, and delete notes.
+- Fast and efficient performance.
+- Real time database sourced data.
 
-This will watch the project directory and restart as necessary.
+## How to Run
+
+1. Make sure you have Deno installed on your system.
+2. Clone the repository to your local machine.
+3. Navigate to the project directory.
+4. Run the following command to start the server:
+````shell
+deno task serve
+5. Access the application in your web browser at `http://localhost:8000`.
+
+## Author
+
+This project was created by Mochamad Syahrial Alzaidan.
+
+## Acknowledgements
+
+Special thanks to the developers of Deno Fresh, Supabase, and Tailwind CSS for their amazing tools and frameworks that made this project possible.
