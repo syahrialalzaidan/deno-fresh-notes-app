@@ -1,12 +1,4 @@
-interface JournalListProps {
-  id: string;
-  title: string;
-  content: string;
-  createdAt: string;
-  setCurrentJournal: (
-    journal: { id: string; title: string; content: string; created_at: string },
-  ) => void;
-}
+import { JournalListProps } from "../utils/interface.tsx";
 
 export default function JournalList(
   { id, title, content, createdAt, setCurrentJournal }: JournalListProps,
@@ -16,7 +8,6 @@ export default function JournalList(
       method: "DELETE",
       body: JSON.stringify({ id }),
     });
-    //refresh the site
     location.reload();
   };
 
@@ -43,7 +34,9 @@ export default function JournalList(
           <h1 className="mb-1 w-full truncate  text-[1.1rem] font-semibold lg:text-xl">
             {trimString(title, 20)}
           </h1>
-          <p className="text-sm text-gray-500 lg:text-base">{trimString(content, 50)}</p>
+          <p className="text-sm text-gray-500 lg:text-base">
+            {trimString(content, 50)}
+          </p>
         </div>
         <div onClick={handleDeleteJournal}>
           <svg

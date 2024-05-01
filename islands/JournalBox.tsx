@@ -1,11 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
-
-interface JournalBoxProps {
-  id: string;
-  title: string;
-  content: string;
-  createdAt: string;
-}
+import { JournalBoxProps } from "../utils/interface.tsx";
 
 export default function JournalBox(
   { id, title, content, createdAt }: JournalBoxProps,
@@ -29,7 +23,7 @@ export default function JournalBox(
     });
     if (response.status !== 200) {
       alert("Failed to save");
-      return
+      return;
     }
     location.reload();
   };

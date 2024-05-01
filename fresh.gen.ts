@@ -11,6 +11,7 @@ import * as $index from "./routes/index.tsx";
 import * as $Journal from "./islands/Journal.tsx";
 import * as $JournalBox from "./islands/JournalBox.tsx";
 import * as $JournalList from "./islands/JournalList.tsx";
+import * as $factory from "./islands/factory.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -26,6 +27,7 @@ const manifest = {
     "./islands/Journal.tsx": $Journal,
     "./islands/JournalBox.tsx": $JournalBox,
     "./islands/JournalList.tsx": $JournalList,
+    "./islands/factory.tsx": $factory,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

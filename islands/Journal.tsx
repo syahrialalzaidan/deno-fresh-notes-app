@@ -1,17 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
 import JournalBox from "../islands/JournalBox.tsx";
 import JournalList from "../islands/JournalList.tsx";
-
-interface Journal {
-  id: string;
-  title: string;
-  content: string;
-  created_at: string;
-}
-
-interface JournalProps {
-  data: Journal[];
-}
+import { JournalProps } from "../utils/interface.tsx";
 
 export const formattedDate = (timestamp: string) => {
   const date = new Date(timestamp);
@@ -23,7 +13,6 @@ export default function Journal({ data }: JournalProps) {
   const [dataState, setDataState] = useState(data);
   const [currentJournal, setCurrentJournal] = useState(dataState[0]);
 
-  //sort data based on created_at
   dataState.sort((a, b) => {
     return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
   });
@@ -32,15 +21,8 @@ export default function Journal({ data }: JournalProps) {
     const response = await fetch("/api/handler", {
       method: "POST",
     });
-    //refresh the site
     location.reload();
   };
-
-  // useEffect(() => {
-  //   console.log(currentJournal);
-  // }, [currentJournal]);
-
-  // console.log(currentJournal)
 
   return (
     <>
@@ -50,12 +32,20 @@ export default function Journal({ data }: JournalProps) {
             <div className="flex h-[85%] w-full flex-col justify-start overflow-y-auto">
               {dataState.map((item) => (
                 <JournalList
+                  key={item.id}
                   id={item.id}
                   title={item.title}
                   content={item.content}
                   createdAt={formattedDate(item.created_at)}
                   setCurrentJournal={setCurrentJournal}
                 />
+                // factory?.createJournalList({
+                //   id: item.id,
+                //   title: item.title,
+                //   content: item.content,
+                //   createdAt: formattedDate(item.created_at),
+                //   setCurrentJournal: setCurrentJournal,
+                // })
               ))}
 
               {dataState.length === 0 && (
